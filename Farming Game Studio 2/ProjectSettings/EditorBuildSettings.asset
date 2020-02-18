@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 2ba103e006491c442b418badf82fec98
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 41c885830ccedb1449bc662b9128fdc7
+  - enabled: 1
+    path: Assets/Scenes/MainGame.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Odera's Scene.unity
+    guid: 71e418bc6374dea45a878f6e600b1039
   m_configObjects: {}

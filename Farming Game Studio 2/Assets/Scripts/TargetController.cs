@@ -1,12 +1,10 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-
 public class TargetController : MonoBehaviour
 {
     public static TargetController instance;
     public List<GameObject> enemiesInRange;
     public List<string> enemiesDetectedTag;
-
     private void Start()
     {
         instance = this;

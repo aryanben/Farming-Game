@@ -1,29 +1,79 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    Collider[] enemiesInContact;
     Rigidbody rb;
-    public float speed;
+    public Transform spherePos;
     public Animator anim;
-    bool isMoving = false;
-    int attackedOnce;
+    public LayerMask enemyMask;
+    public float speed;
+    public float jumpBackSpeed;
     public static bool hasAttacked;
+    public static bool blockAnimation;
+    bool isMoving = false;
+    bool canMove;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
     }
-
     private void Update()
     {
-        LookToMouse();       
+        LookToMouse();
+        Attack();
+        Block();
     }
     void FixedUpdate()
     {
-       Movement();
+        Movement();
     }
+    void Attack()
+    {     
+        if (Input.GetMouseButtonDown(0) && GameManager.isAllowedToAttack)
+        {
+            anim.SetTrigger("AttackTrigger");
+
+            enemiesInContact = Physics.OverlapSphere(spherePos.position, 1, enemyMask);
+
+            for (int i = 0; i < enemiesInContact.Length; i++)
+            {
+                Debug.Log(enemiesInContact[i].name);
+
+                enemiesInContact[i].SendMessage("EnemyJumpBackAfterAttack");
+            }          
+        }       
+    }
+    void Block()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (EnemyMovement.playerCanBlock == false)
+            {
+                blockAnimation = true;
+            }
+        }
+        else if (Input.GetMouseButtonUp(1))
+        {
+            blockAnimation = false;
+        }
+        if (blockAnimation)
+        {
+            canMove = false;
+
+            anim.SetBool("canBlock", true);
+        }  
+        else if (!blockAnimation)
+        {
+            canMove = true;
+            anim.SetBool("canBlock", false);
+        }
+        if (EnemyMovement.playerCanBlock)
+        {
+            blockAnimation = false;
+        }
+    }
+
     void LookToMouse()
     {
         Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -38,60 +88,46 @@ public class PlayerMovement : MonoBehaviour
     }
     void Movement()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        if (canMove)
+        {
+            float horizontal = Input.GetAxis("Horizontal");
+            float vertical = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(horizontal, 0, vertical);
-        rb.velocity = movement * speed * Time.deltaTime;
+            Vector3 movement = new Vector3(horizontal, 0, vertical);
+            rb.velocity = movement * speed * Time.deltaTime;
 
-        if (Input.GetAxis("Vertical") > 0.001)
-        {
-            isMoving = true;
-        }            
-        else if (Input.GetAxis("Vertical") < -0.001)
-        {
-            isMoving = true;
-        }       
-
-        else if (Input.GetAxis("Horizontal") > 0.001)
-        {
-            isMoving = true;
-        }
-        else if (Input.GetAxis("Horizontal") < -0.001)
-        {
-            isMoving = true;
-        }
-        else
-        {
-            isMoving = false;
-        }
-
-        if (isMoving)
-        {
-            anim.SetBool("isWalking", true);           
-        }
-        else
-        {
-            anim.SetBool("isWalking", false);
-        }
-
-        if (GameManager.isAllowedToAttack)
-        {
-            if (Input.GetMouseButton(0))
+            if (Input.GetAxis("Vertical") > 0.001)
             {
-                anim.SetBool("isAttacking", true);
-                attackedOnce++;
+                isMoving = true;
             }
-            else anim.SetBool("isAttacking", false);
-
-            if (attackedOnce >= 2)
+            else if (Input.GetAxis("Vertical") < -0.001)
             {
-                anim.SetBool("isAttacking2", true);
-                attackedOnce = 0;
+                isMoving = true;
             }
-            else anim.SetBool("isAttacking2", false);
-        }       
 
+            else if (Input.GetAxis("Horizontal") > 0.001)
+            {
+                isMoving = true;
+            }
+            else if (Input.GetAxis("Horizontal") < -0.001)
+            {
+                isMoving = true;
+            }
+            else
+            {
+                isMoving = false;
+            }
+
+            if (isMoving)
+            {
+                anim.SetBool("isWalking", true);
+            }
+            else
+            {
+                anim.SetBool("isWalking", false);
+            }
+        }      
+        
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {          
             for (int i = 0; i < TargetController.instance.enemiesInRange.Count; i++)
@@ -101,20 +137,13 @@ public class PlayerMovement : MonoBehaviour
                 Vector3 enemyPos = TargetController.instance.enemiesInRange[i].transform.position;
 
                 Vector3 direction = (transform.position - enemyPos).normalized;
-                transform.GetComponent<Rigidbody>().velocity = direction * speed;
+                transform.GetComponent<Rigidbody>().velocity = direction * jumpBackSpeed;
             }     
         }   
         else anim.SetBool("isJumping", false);
     }
-
-    //Used For the Animation Events
-    void FirstSkill()
+    private void OnDrawGizmos()
     {
-        hasAttacked = true;
-    }
-
-    void SecondSkill()
-    {
-        hasAttacked = true;
+        Gizmos.DrawWireSphere(spherePos.position, 1);
     }
 }
