@@ -5,7 +5,6 @@ public class IntroScene : MonoBehaviour
 {
     bool isGrounded;
     public GameObject smoke;
-    public GameObject fallingSmoke;
     public GameObject introText;
     public GameObject introText2;
 
@@ -18,16 +17,28 @@ public class IntroScene : MonoBehaviour
     public AudioSource explosion;
 
     int playExplosionOnce = 0;
+    Rigidbody rb;
+
+
+    public Camera introCamera;
+    public Camera MainCamera;
+
+    public float switchOnMainCamera;
     private void Start()
     {
         wind.Play();
+        rb = GetComponent<Rigidbody>();
+        MainCamera.enabled = false;
     }
     void Update()
     {
-        if (!isGrounded)
+        switchOnMainCamera -= Time.deltaTime;
+
+        if (switchOnMainCamera <= 0)
         {
-            transform.Rotate(0f, 1f, 1f);
-        } else transform.Rotate(0, 0, 0);
+            MainCamera.enabled = true;
+            introCamera.enabled = false;
+        }
 
         if (waitForSecondsBoolForIntroText)
         {
@@ -62,17 +73,12 @@ public class IntroScene : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    void PointOfContact()
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            Destroy(wind);
-            playExplosionOnce++;
-            Destroy(fallingSmoke);
-            isGrounded = true;           
-            smoke.SetActive(true);
-            TimeForIntroText();
-        }
+        Destroy(wind);
+        playExplosionOnce++;
+        smoke.SetActive(true);
+        TimeForIntroText();
     }
 
     void TimeForIntroText()

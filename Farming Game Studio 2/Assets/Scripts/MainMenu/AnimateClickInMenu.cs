@@ -1,6 +1,6 @@
 ﻿using UnityEngine.SceneManagement;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class AnimateClickInMenu : MonoBehaviour
 {
     Animator anim;
@@ -24,6 +24,15 @@ public class AnimateClickInMenu : MonoBehaviour
         SceneManager.LoadScene("Intro");
     }
 
+    public void OnHoverTitle()
+    {
+        transform.localScale = new Vector3(1.1f, 1.1f, 1);
+    }
+
+    public void OnLeaveHoverTitle()
+    {
+        transform.localScale = new Vector3(1.03f, 1.03f, 1);
+    }
     public void OnExit()
     {
         Application.Quit();

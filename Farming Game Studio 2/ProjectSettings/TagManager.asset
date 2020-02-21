@@ -9,6 +9,8 @@ TagManager:
   - EnemyAttackBox
   - Sword
   - Ground
+  - canMove
+  - Tree
   layers:
   - Default
   - TransparentFX
