@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.Animations;
 public class Player : MonoBehaviour
 {
     Collider[] enemiesInContact;
@@ -13,52 +13,63 @@ public class Player : MonoBehaviour
     public static bool hasAttacked;
     public static bool blockAnimation;
     bool isMoving = false;
-    bool canMove;
-
-    //PlayerHealth
-    public int startingHealth = 100;                            
-    public static float currentHealth;                          
-    public Slider healthSlider;
-    public int attackDamage = 20;
-
-    //PlayerEnergy
-    public int startingEnergy = 100;
-    public static float currentEnergy;
-    public Slider EnergySlider;
-    float cantWalkFor5Seconds;
-    bool cantWalk;
-    float energyPoint = 0.01f;
-
-    private void Awake()
-    {
-        currentHealth = startingHealth;
-        healthSlider.maxValue = currentHealth;
-        healthSlider.value = currentHealth;
-
-        currentEnergy = startingEnergy;
-        EnergySlider.maxValue = currentEnergy;
-        EnergySlider.value = currentEnergy;
-    }
+    public float removeBlock = 1f;
+    bool canRemoveBlock;
+    public Animator quickAnim;
+    public float fireRate = 0.5F;
+    private float nextFire = 0.0F;
+    Vector3 slideDir;
+    Vector3 slideDir2;
+    public float rollSpeed = 3000f;
     void Start()
     {
-
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
     }
+
+    public void PlayAnimation(AnimationClip clip)
+    {
+        //RuntimeAnimatorController.
+        //quickAnim.runtimeAnimatorController;
+        //quickAnim.clip = clip;
+        //quickAnim.Play();
+    }
+
     private void Update()
     {
+
         LookToMouse();
         Attack();
         Block();
+
+        if (Energy.Instance.destroyPlayer)
+        {
+            Energy.Instance.destroyPlayerTime -= Time.deltaTime;
+            Energy.Instance.canMove = false;
+
+            if (Energy.Instance.destroyPlayerTime <= 0)
+            {
+                Destroy(gameObject);
+
+                Energy.Instance.destroyPlayer = false;
+            }
+        }
+
+        if (Health.Instance.triggerAnimation)
+        {
+            anim.SetTrigger("Death");
+            Health.Instance.triggerAnimation = false;
+        }
+
+
     }
     void FixedUpdate()
     {
         Movement();
     }
 
-    
     void Attack()
-    {     
+    {
         if (Input.GetMouseButtonDown(0) && GameManager.isAllowedToAttack)
         {
             anim.SetTrigger("AttackTrigger");
@@ -69,8 +80,8 @@ public class Player : MonoBehaviour
             {
                 Debug.Log(enemiesInContact[i].name);
                 enemiesInContact[i].SendMessage("EnemyJumpBackAfterAttack");
-            }          
-        }       
+            }
+        }
     }
     void Block()
     {
@@ -79,6 +90,7 @@ public class Player : MonoBehaviour
             if (Enemy.playerCanBlock == false)
             {
                 blockAnimation = true;
+                canRemoveBlock = true;
             }
         }
         else if (Input.GetMouseButtonUp(1))
@@ -87,18 +99,28 @@ public class Player : MonoBehaviour
         }
         if (blockAnimation)
         {
-            canMove = false;
+            Energy.Instance.canMove = false;
 
             anim.SetBool("canBlock", true);
-        }  
+        }
         else if (!blockAnimation)
         {
-            canMove = true;
+            Energy.Instance.canMove = true;
             anim.SetBool("canBlock", false);
         }
         if (Enemy.playerCanBlock)
         {
             blockAnimation = false;
+        }
+        if (canRemoveBlock)
+        {
+            removeBlock -= Time.deltaTime;
+
+            if (removeBlock <= 0)
+            {
+                blockAnimation = false;
+                removeBlock = 1f;
+            }
         }
     }
 
@@ -116,119 +138,108 @@ public class Player : MonoBehaviour
     }
     void Movement()
     {
-        if (canMove)
-        {  
-
-            float horizontal = Input.GetAxis("Horizontal");
-            float vertical = Input.GetAxis("Vertical");
-
-            Vector3 movement = new Vector3(horizontal, 0, vertical);
+        if (Energy.Instance.canMove)
+        {
+            Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            movement = Camera.main.transform.TransformDirection(movement);
             rb.velocity = movement * speed * Time.deltaTime;
+
+            transform.rotation = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0);
+
 
             if (Input.GetAxis("Vertical") > 0.001)
             {
-                DecreaseEnergy(energyPoint);
+                Energy.Instance.DecreaseEnergy(Energy.Instance.energyPoint);
                 isMoving = true;
             }
             else if (Input.GetAxis("Vertical") < -0.001)
             {
-                DecreaseEnergy(energyPoint);
+                Energy.Instance.DecreaseEnergy(Energy.Instance.energyPoint);
                 isMoving = true;
             }
 
             else if (Input.GetAxis("Horizontal") > 0.001)
             {
-                DecreaseEnergy(energyPoint);
+                Energy.Instance.DecreaseEnergy(Energy.Instance.energyPoint);
                 isMoving = true;
             }
             else if (Input.GetAxis("Horizontal") < -0.001)
             {
-                DecreaseEnergy(energyPoint);
+                Energy.Instance.DecreaseEnergy(Energy.Instance.energyPoint);
                 isMoving = true;
             }
             else
             {
                 isMoving = false;
-                IncreaseEnergy(energyPoint);
+                Energy.Instance.IncreaseEnergy(Energy.Instance.energyPoint);
             }
 
             if (isMoving)
             {
-                DecreaseEnergy(energyPoint);
+                Energy.Instance.DecreaseEnergy(Energy.Instance.energyPoint);
                 anim.SetBool("isWalking", true);
             }
             else
             {
                 anim.SetBool("isWalking", false);
-                IncreaseEnergy(energyPoint);
+                Energy.Instance.IncreaseEnergy(Energy.Instance.energyPoint);
             }
 
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.LeftShift) && Time.time > nextFire)
             {
-                for (int i = 0; i < TargetController.instance.enemiesInRange.Count; i++)
-                {
-                    anim.SetBool("isJumping", true);
+               
+                    anim.SetTrigger("DodgeBack");
+                    anim.SetBool("isIdle", false);
+                    nextFire = Time.time + fireRate;
 
-                    Vector3 enemyPos = TargetController.instance.enemiesInRange[i].transform.position;
+                   
 
-                    Vector3 direction = (transform.position - enemyPos).normalized;
-                    transform.GetComponent<Rigidbody>().velocity = direction * jumpBackSpeed;
-                }
+                    //slideDir = movement;
+                    //GetComponent<Rigidbody>().velocity = slideDir * rollSpeed * Time.deltaTime;
+                
             }
-            else anim.SetBool("isJumping", false);
-        }
-
-        if (cantWalk)
-        {
-            cantWalkFor5Seconds -= Time.deltaTime;
-
-            if(cantWalkFor5Seconds <= 0)
+            else
             {
-                cantWalk = false;
-                canMove = true;
+                anim.ResetTrigger("DodgeBack");
+                anim.SetBool("isIdle", true);
             }
+            //for (int i = 0; i < TargetController.instance.enemiesInRange.Count; i++)
+            //{
+            //    anim.SetBool("isJumping", true);
+
+            //    Vector3 enemyPos = TargetController.instance.enemiesInRange[i].transform.position;
+
+            //    Vector3 direction = (transform.position - enemyPos).normalized;
+            //    transform.GetComponent<Rigidbody>().velocity = direction * jumpBackSpeed;
+            //}
+            //else anim.SetBool("isJumping", false);
         }
-    }
 
-    public void TakeDamage(float amount)
-    {
-        currentHealth -= amount;
-
-        healthSlider.value = currentHealth;
-
-        if (currentHealth <= 0)
+        if (Energy.Instance.cantWalk)
         {
-            Destroy(gameObject);
-        }
-    }
+            Energy.Instance.cantWalkFor5Seconds -= Time.deltaTime;
 
-    public void DecreaseEnergy(float amount)
-    {
-        currentEnergy -= amount;
-
-        EnergySlider.value = currentEnergy;
-
-        if (currentEnergy <= 0)
-        {
-            canMove = false;
-            cantWalk = true;
-        }
-    }
-
-    public void IncreaseEnergy(float amount)
-    {
-        currentEnergy += amount;
-
-        EnergySlider.value = currentEnergy;
-
-        if (currentEnergy >= 100)
-        {
-            currentEnergy = 100;
+            if (Energy.Instance.cantWalkFor5Seconds <= 0)
+            {
+                Energy.Instance.cantWalk = false;
+                Energy.Instance.canMove = true;
+            }
         }
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(spherePos.position, 1);
+    }
+
+    void AnimationCall()
+    {
+        for (int i = 0; i < TargetController.instance.enemiesInRange.Count; i++)
+        {
+            Vector3 enemyPos = TargetController.instance.enemiesInRange[i].transform.position;
+
+            Vector3 direction = (transform.position - enemyPos).normalized;
+            transform.GetComponent<Rigidbody>().velocity = direction * jumpBackSpeed;
+        }
     }
 }

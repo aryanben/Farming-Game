@@ -11,6 +11,11 @@ TagManager:
   - Ground
   - canMove
   - Tree
+  - Canvas
+  - Item
+  - Well
+  - BoidManager
+  - Bird
   layers:
   - Default
   - TransparentFX

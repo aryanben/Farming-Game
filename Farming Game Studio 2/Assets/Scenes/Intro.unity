@@ -975,7 +975,6 @@ GameObject:
   m_Component:
   - component: {fileID: 520514875}
   - component: {fileID: 520514874}
-  - component: {fileID: 520514873}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -983,14 +982,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &520514873
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 520514872}
-  m_Enabled: 1
 --- !u!20 &520514874
 Camera:
   m_ObjectHideFlags: 0
@@ -1157,8 +1148,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10, y: -0.000015258789}
-  m_SizeDelta: {x: 572.1, y: 116.4}
+  m_AnchoredPosition: {x: -10, y: -1}
+  m_SizeDelta: {x: 572.1, y: 135.04}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &615955329
 MonoBehaviour:
@@ -1180,7 +1171,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: d37cb3329a64a414e8d57f5727fe208a, type: 3}
-    m_FontSize: 24
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -2724,7 +2715,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10.61
+      scalar: 2
       minScalar: 10
       maxCurve:
         serializedVersion: 2

@@ -33,6 +33,11 @@ public class AnimateClickInMenu : MonoBehaviour
     {
         transform.localScale = new Vector3(1.03f, 1.03f, 1);
     }
+
+    public void ExitFromFishing()
+    {
+        SceneManager.LoadScene("Odera's Scene");
+    }
     public void OnExit()
     {
         Application.Quit();

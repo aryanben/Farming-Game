@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if(Physics.Raycast(ray, out hit, 8f))
+        if(Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
             if (hit.transform.CompareTag("Enemy"))
             {

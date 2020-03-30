@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
     public static float currentHealth;
     //public Slider healthSlider;
 
-    Player playerHealth;
+    Health playerHealth;
     Rigidbody rb;
 
     private void Start()
@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
         //healthSlider.maxValue = currentHealth;
         //healthSlider.value = currentHealth;
 
-        playerHealth = FindObjectOfType<Player>();
+        playerHealth = FindObjectOfType<Health>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
     }
@@ -92,7 +92,7 @@ public class Enemy : MonoBehaviour
                     anim.SetBool("isAttacking", true);
                     anim.SetBool("isMoving", false);
 
-                    if (Player.currentHealth > 0)
+                    if (Health.Instance.currentHealth > 0)
                     {
                         playerHealth.TakeDamage(attackDamage);
                     }

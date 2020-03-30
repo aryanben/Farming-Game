@@ -548,7 +548,85 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'Idle' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'Chest' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\nClip 'Walk' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Chest' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\nClip 'Run' has import
+      animation warnings that might lower retargeting quality:\nNote: Activate translation
+      DOF on avatar to improve retargeting quality.\n\t'Chest' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\nClip 'Crouch'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'CrouchingWalk' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'Chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Sword_Ready' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Sword_Iai' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Sword_Slash' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Sword_Slash2' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Sword_JumpSlash' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'Chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Sword_Guard' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Sword_Parry' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'ChainSaw_Idle' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'Chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'ChainSaw_Slash' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'Chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'ChainSaw_Slash2' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'Chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'NailGun_Idle' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'NailGun_Aim' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Throw' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Damaged' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Down' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Dizzy' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Sleep' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'WakeUp' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Irritated' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Happy' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Saltbae' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -1496,7 +1574,8 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
+  referencedClips:
+  - 2d400f1e70c00c3428bbaf8c28a8beb3
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
@@ -1677,6 +1756,14 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
+    - boneName: Face 1
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
     - boneName: Oya1_L_
       humanName: Left Thumb Proximal
       limit:
@@ -1837,14 +1924,6 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: Chest
-      humanName: Chest
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
     skeleton:
     - name: JunkoChan(Clone)
       parentName: 
@@ -1861,12 +1940,12 @@ ModelImporter:
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: Eye[]
+    - name: Face
       parentName: Mesh
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: Face
+    - name: Eye[]
       parentName: Mesh
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
@@ -1964,63 +2043,63 @@ ModelImporter:
     - name: Shoulder_R_
       parentName: Chest
       position: {x: 0.079333216, y: 0.082800366, z: -0.02345871}
-      rotation: {x: -0, y: -0.00000001138598, z: 0.02773224, w: 0.99961543}
+      rotation: {x: -0, y: -0.000000011385979, z: 0.02773224, w: 0.99961543}
       scale: {x: 1, y: 1, z: 1}
     - name: UArm_R_
       parentName: Shoulder_R_
       position: {x: 0.04472196, y: -0.01814705, z: -0.00000000834465}
       rotation: {x: 3.6379783e-10, y: -3.6379788e-10, z: 0.000000015182877, w: 1}
-      scale: {x: 1, y: 1, z: 0.9999999}
+      scale: {x: 1, y: 1, z: 0.99999994}
     - name: DArm_R_
       parentName: UArm_R_
       position: {x: 0.1724657, y: -0.006026306, z: -0.0018782043}
       rotation: {x: -0, y: -0, z: 1.3234887e-19, w: 1}
-      scale: {x: 1, y: 1, z: 0.9999999}
+      scale: {x: 1, y: 1, z: 1}
     - name: Hand_R_
       parentName: DArm_R_
       position: {x: 0.17227562, y: 0.0047653196, z: -0.003983612}
-      rotation: {x: -0.0016217945, y: 0.000022568813, z: -0.07010923, w: 0.997538}
-      scale: {x: 1, y: 1, z: 0.9999999}
+      rotation: {x: -0.0016217958, y: 0.000022568835, z: -0.07010929, w: 0.997538}
+      scale: {x: 1, y: 1, z: 1}
     - name: Katana_hand
       parentName: Hand_R_
       position: {x: 0.07670494, y: 0.002862854, z: -0.0039247703}
       rotation: {x: -0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 0.9999999}
+      scale: {x: 1, y: 1, z: 1}
     - name: Koyu1_R_
       parentName: Hand_R_
       position: {x: 0.10757297, y: 0.03456886, z: -0.033788636}
-      rotation: {x: 0.0011450262, y: -0.042032234, z: 0.078644484, w: 0.9960156}
-      scale: {x: 1.0000006, y: 1.0000007, z: 0.9999999}
+      rotation: {x: 0.0011450314, y: -0.042032246, z: 0.078644484, w: 0.9960156}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1}
     - name: Koyu2_R_
       parentName: Koyu1_R_
       position: {x: 0.045898817, y: 0.0012503815, z: 0}
       rotation: {x: -0, y: -0, z: -4.135902e-20, w: 1}
-      scale: {x: 1.0000007, y: 1.0000007, z: 0.9999999}
+      scale: {x: 1.0000004, y: 1.0000005, z: 0.9999999}
     - name: Kusu1_R_
       parentName: Hand_R_
       position: {x: 0.10757297, y: 0.036398087, z: -0.0070215818}
-      rotation: {x: -0.0007584351, y: -0.04650396, z: 0.099191435, w: 0.9939809}
-      scale: {x: 0.9999999, y: 1.0000001, z: 0.9999999}
+      rotation: {x: -0.000758445, y: -0.04650391, z: 0.0991914, w: 0.9939809}
+      scale: {x: 0.9999999, y: 0.99999994, z: 1}
     - name: Kusu2_R_
       parentName: Kusu1_R_
       position: {x: 0.04677116, y: -0.00076278683, z: 0}
       rotation: {x: -0, y: -0, z: -2.3161055e-19, w: 1}
-      scale: {x: 1.0000005, y: 1.0000007, z: 0.9999999}
+      scale: {x: 1.0000002, y: 1.0000005, z: 0.9999999}
     - name: Naka1_R_
       parentName: Hand_R_
       position: {x: 0.10757297, y: 0.036398087, z: 0.017886998}
-      rotation: {x: -0.0020101615, y: -0.048709016, z: 0.11120637, w: 0.992601}
-      scale: {x: 1.0000002, y: 1.0000001, z: 0.9999999}
+      rotation: {x: -0.0020101562, y: -0.048709024, z: 0.11120637, w: 0.992601}
+      scale: {x: 1.0000001, y: 1, z: 1}
     - name: Naka2_R_
       parentName: Naka1_R_
       position: {x: 0.045247916, y: -0.0018674468, z: 0}
       rotation: {x: -0, y: -0, z: 1.9852332e-19, w: 1}
-      scale: {x: 1.0000002, y: 1.0000002, z: 0.9999999}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.9999999}
     - name: Oya1_R_
       parentName: Hand_R_
       position: {x: 0.05241184, y: -0.012425537, z: 0.05286313}
-      rotation: {x: -0.08936623, y: -0.20369884, z: 0.11141167, w: 0.9685598}
-      scale: {x: 1, y: 1, z: 0.9999999}
+      rotation: {x: -0.0893662, y: -0.20369883, z: 0.11141165, w: 0.96855974}
+      scale: {x: 1, y: 1, z: 1}
     - name: Oya2_R_
       parentName: Oya1_R_
       position: {x: 0.043017082, y: -0.007919464, z: 0.020025797}
@@ -2029,13 +2108,13 @@ ModelImporter:
     - name: Hito1_R_
       parentName: Hand_R_
       position: {x: 0.10757297, y: 0.031694565, z: 0.0430688}
-      rotation: {x: -0.0005294855, y: -0.019347208, z: 0.042553656, w: 0.99890673}
-      scale: {x: 1.0000005, y: 1.0000004, z: 1}
+      rotation: {x: -0.0005295647, y: -0.019347528, z: 0.042554796, w: 0.9989066}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
     - name: Hito2_R_
       parentName: Hito1_R_
       position: {x: 0.046013527, y: 0.004199676, z: 0.002481966}
       rotation: {x: -0, y: -0, z: 2.6469777e-19, w: 1}
-      scale: {x: 1.0000007, y: 1.0000005, z: 1}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1}
     - name: Neck
       parentName: Chest
       position: {x: -0, y: 0.14533576, z: -0.036763556}
@@ -2094,58 +2173,58 @@ ModelImporter:
     - name: Shoulder_L_
       parentName: Chest
       position: {x: -0.079333216, y: 0.082800366, z: -0.02345871}
-      rotation: {x: -0, y: 0.00000001138598, z: -0.02773224, w: 0.99961543}
+      rotation: {x: -0, y: 0.000000011385979, z: -0.02773224, w: 0.99961543}
       scale: {x: 1, y: 1, z: 1}
     - name: UArm_L_
       parentName: Shoulder_L_
       position: {x: -0.04472196, y: -0.01814705, z: -0.00000000834465}
       rotation: {x: 3.6379783e-10, y: 3.6379788e-10, z: -0.000000015182877, w: 1}
-      scale: {x: 1, y: 1, z: 0.9999999}
+      scale: {x: 1, y: 1, z: 0.99999994}
     - name: DArm_L_
       parentName: UArm_L_
       position: {x: -0.1724657, y: -0.006026306, z: -0.0018782043}
       rotation: {x: -0, y: -0, z: -1.3234887e-19, w: 1}
-      scale: {x: 1, y: 1, z: 0.9999999}
+      scale: {x: 1, y: 1, z: 1}
     - name: Hand_L_
       parentName: DArm_L_
       position: {x: -0.17227562, y: 0.0047653196, z: -0.003983612}
-      rotation: {x: -0.0016217945, y: -0.000022568813, z: 0.07010923, w: 0.997538}
-      scale: {x: 1, y: 1, z: 0.9999999}
+      rotation: {x: -0.0016217958, y: -0.000022568835, z: 0.07010929, w: 0.997538}
+      scale: {x: 1, y: 1, z: 1}
     - name: Koyu1_L_
       parentName: Hand_L_
       position: {x: -0.10757297, y: 0.03456886, z: -0.033788636}
-      rotation: {x: 0.0011450262, y: 0.042032234, z: -0.078644484, w: 0.9960156}
-      scale: {x: 1.0000006, y: 1.0000007, z: 0.9999999}
+      rotation: {x: 0.0011450314, y: 0.042032246, z: -0.078644484, w: 0.9960156}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1}
     - name: Koyu2_L_
       parentName: Koyu1_L_
       position: {x: -0.045898817, y: 0.0012503815, z: 0}
       rotation: {x: -0, y: -0, z: 4.135902e-20, w: 1}
-      scale: {x: 1.0000007, y: 1.0000007, z: 0.9999999}
+      scale: {x: 1.0000004, y: 1.0000005, z: 0.9999999}
     - name: Kusu1_L_
       parentName: Hand_L_
       position: {x: -0.10757297, y: 0.036398087, z: -0.0070215818}
-      rotation: {x: -0.0007584351, y: 0.04650396, z: -0.099191435, w: 0.9939809}
-      scale: {x: 0.9999999, y: 1.0000001, z: 0.9999999}
+      rotation: {x: -0.000758445, y: 0.04650391, z: -0.0991914, w: 0.9939809}
+      scale: {x: 0.9999999, y: 0.99999994, z: 1}
     - name: Kusu2_L_
       parentName: Kusu1_L_
       position: {x: -0.04677116, y: -0.00076278683, z: 0}
       rotation: {x: -0, y: -0, z: 2.3161055e-19, w: 1}
-      scale: {x: 1.0000005, y: 1.0000007, z: 0.9999999}
+      scale: {x: 1.0000002, y: 1.0000005, z: 0.9999999}
     - name: Naka1_L_
       parentName: Hand_L_
       position: {x: -0.10757297, y: 0.036398087, z: 0.017886998}
-      rotation: {x: -0.0020101615, y: 0.048709016, z: -0.11120637, w: 0.992601}
-      scale: {x: 1.0000002, y: 1.0000001, z: 0.9999999}
+      rotation: {x: -0.0020101562, y: 0.048709024, z: -0.11120637, w: 0.992601}
+      scale: {x: 1.0000001, y: 1, z: 1}
     - name: Naka2_L_
       parentName: Naka1_L_
       position: {x: -0.045247916, y: -0.0018674468, z: 0}
       rotation: {x: -0, y: -0, z: -1.9852332e-19, w: 1}
-      scale: {x: 1.0000002, y: 1.0000002, z: 0.9999999}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.9999999}
     - name: Oya1_L_
       parentName: Hand_L_
       position: {x: -0.05241184, y: -0.012425537, z: 0.05286313}
-      rotation: {x: -0.08936623, y: 0.20369884, z: -0.11141167, w: 0.9685598}
-      scale: {x: 1, y: 1, z: 0.9999999}
+      rotation: {x: -0.0893662, y: 0.20369883, z: -0.11141165, w: 0.96855974}
+      scale: {x: 1, y: 1, z: 1}
     - name: Oya2_L_
       parentName: Oya1_L_
       position: {x: -0.043017082, y: -0.007919464, z: 0.020025797}
@@ -2154,13 +2233,13 @@ ModelImporter:
     - name: Hito1_L_
       parentName: Hand_L_
       position: {x: -0.10757297, y: 0.031694565, z: 0.0430688}
-      rotation: {x: -0.0005294855, y: 0.019347208, z: -0.042553656, w: 0.99890673}
-      scale: {x: 1.0000005, y: 1.0000004, z: 1}
+      rotation: {x: -0.0005295647, y: 0.019347528, z: -0.042554796, w: 0.9989066}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
     - name: Hito2_L_
       parentName: Hito1_L_
       position: {x: -0.046013527, y: 0.004199676, z: 0.002481966}
       rotation: {x: -0, y: -0, z: -2.6469777e-19, w: 1}
-      scale: {x: 1.0000007, y: 1.0000005, z: 1}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1}
     - name: ULeg_L_
       parentName: Hip
       position: {x: -0.07310964, y: 0.0096031185, z: -0.026663827}
