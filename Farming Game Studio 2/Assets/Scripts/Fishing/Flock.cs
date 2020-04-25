@@ -71,7 +71,6 @@ public class Flock : MonoBehaviour
 
                     if (dist < .9f)
                     {
-                        Debug.Log(dist);
                         avoid = avoid + (this.transform.position - fish.transform.position);
                     }
 

@@ -16,6 +16,18 @@ TagManager:
   - Well
   - BoidManager
   - Bird
+  - interactable
+  - EnemyParent
+  - Ball
+  - UnbreakableBlock
+  - BreakableBlock
+  - You Win
+  - Plane
+  - Table
+  - Stone
+  - Tent
+  - scoreAndInputFieldCanvas
+  - gm
   layers:
   - Default
   - TransparentFX

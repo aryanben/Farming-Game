@@ -36,7 +36,7 @@ public class AnimateClickInMenu : MonoBehaviour
 
     public void ExitFromFishing()
     {
-        SceneManager.LoadScene("Odera's Scene");
+        SceneManager.LoadSceneAsync("Odera's Scene");
     }
     public void OnExit()
     {
