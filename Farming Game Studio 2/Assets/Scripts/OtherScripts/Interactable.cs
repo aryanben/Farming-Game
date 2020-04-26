@@ -18,11 +18,17 @@ public class Interactable : MonoBehaviour
     public GameObject sleepCanvas;
     public GameObject camera;
     CameraMovement cameraAnim;
+
+    public GameObject tutorialTree;
+    public GameObject tutorialStone;
+
+    public static int destroyedMaterial; //For the dialogue
     private void Start()
     {
-        treeHealth = 5;
-        stoneHealth = 5;
+        treeHealth = 2;
+        stoneHealth = 2;
         cameraAnim = camera.GetComponent<CameraMovement>();
+
     }
 
     private void Update()
@@ -42,6 +48,11 @@ public class Interactable : MonoBehaviour
 
         if(treeHealth <= 0)
         {
+            if(treeHealth <= 0 && tutorialTree != null)
+            {
+                destroyedMaterial = 1;
+            }
+          
             Debug.Log("Inventory.AddWood = " + 20);
             Destroy(gameObject);
         }

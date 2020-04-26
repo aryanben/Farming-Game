@@ -28,6 +28,7 @@ TagManager:
   - Tent
   - scoreAndInputFieldCanvas
   - gm
+  - BewareOfEnemy
   layers:
   - Default
   - TransparentFX

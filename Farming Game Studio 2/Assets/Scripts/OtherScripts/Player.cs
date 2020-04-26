@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     float movementY;
     bool canSprint;
     EnemyBehaviorTree bt;
-
+    public static int enemySeen; //For Dialogue
     void Start()
     {
         bt = FindObjectOfType<EnemyBehaviorTree>();
@@ -321,6 +321,14 @@ public class Player : MonoBehaviour
         {
             weapon.SetActive(false);
             anim.SetBool("UnEquipSword", false);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("BewareOfEnemy"))
+        {
+            enemySeen = 1;
         }
     }
 }
