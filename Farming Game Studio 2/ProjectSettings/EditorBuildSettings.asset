@@ -12,9 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro.unity
     guid: 41c885830ccedb1449bc662b9128fdc7
   - enabled: 1
-    path: Assets/Scenes/MainGame.unity
+    path: Assets/Scenes/EnemyTest.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Odera's Scene.unity
     guid: 71e418bc6374dea45a878f6e600b1039
+  - enabled: 1
+    path: Assets/Scenes/FishSightSee.unity
+    guid: 67ca9ddb0829ca84796607eef5245188
+  - enabled: 1
+    path: Assets/Scenes/Birds.unity
+    guid: 48d60816608de43419f680c017f465b1
   m_configObjects: {}

@@ -1,54 +1,146 @@
 fileFormatVersion: 2
 guid: bafc579d6c6aded44bdbc8184d51aba4
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: ChainSawBody
-    100004: ChainSawBody 1
-    100006: CV
-    100008: CV 1
-    100010: Grip
-    100012: Mesh
-    100014: Starter
-    100016: Starter 1
-    100018: StarterRope
-    100020: StarterRope 1
-    100022: STdn
-    100024: STdn 1
-    100026: STup
-    100028: STup 1
-    400000: //RootNode
-    400002: ChainSawBody
-    400004: ChainSawBody 1
-    400006: CV
-    400008: CV 1
-    400010: Grip
-    400012: Mesh
-    400014: Starter
-    400016: Starter 1
-    400018: StarterRope
-    400020: StarterRope 1
-    400022: STdn
-    400024: STdn 1
-    400026: STup
-    400028: STup 1
-    2100000: JunkoWeapon
-    4300000: ChainSawBody
-    4300002: STup
-    4300004: STdn
-    4300006: CV
-    4300008: Starter
-    4300010: StarterRope
-    7400000: SawMoving
-    9500000: //RootNode
-    13700000: ChainSawBody 1
-    13700002: CV 1
-    13700004: Starter 1
-    13700006: StarterRope
-    13700008: STdn 1
-    13700010: STup 1
-    2186277476908879412: ImportLogs
+  serializedVersion: 19300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: ChainSawBody
+  - first:
+      1: 100004
+    second: ChainSawBody 1
+  - first:
+      1: 100006
+    second: CV
+  - first:
+      1: 100008
+    second: CV 1
+  - first:
+      1: 100010
+    second: Grip
+  - first:
+      1: 100012
+    second: Mesh
+  - first:
+      1: 100014
+    second: Starter
+  - first:
+      1: 100016
+    second: Starter 1
+  - first:
+      1: 100018
+    second: StarterRope
+  - first:
+      1: 100020
+    second: StarterRope 1
+  - first:
+      1: 100022
+    second: STdn
+  - first:
+      1: 100024
+    second: STdn 1
+  - first:
+      1: 100026
+    second: STup
+  - first:
+      1: 100028
+    second: STup 1
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: ChainSawBody
+  - first:
+      4: 400004
+    second: ChainSawBody 1
+  - first:
+      4: 400006
+    second: CV
+  - first:
+      4: 400008
+    second: CV 1
+  - first:
+      4: 400010
+    second: Grip
+  - first:
+      4: 400012
+    second: Mesh
+  - first:
+      4: 400014
+    second: Starter
+  - first:
+      4: 400016
+    second: Starter 1
+  - first:
+      4: 400018
+    second: StarterRope
+  - first:
+      4: 400020
+    second: StarterRope 1
+  - first:
+      4: 400022
+    second: STdn
+  - first:
+      4: 400024
+    second: STdn 1
+  - first:
+      4: 400026
+    second: STup
+  - first:
+      4: 400028
+    second: STup 1
+  - first:
+      21: 2100000
+    second: JunkoWeapon
+  - first:
+      43: 4300000
+    second: ChainSawBody
+  - first:
+      43: 4300002
+    second: STup
+  - first:
+      43: 4300004
+    second: STdn
+  - first:
+      43: 4300006
+    second: CV
+  - first:
+      43: 4300008
+    second: Starter
+  - first:
+      43: 4300010
+    second: StarterRope
+  - first:
+      74: 7400000
+    second: SawMoving
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: ChainSawBody 1
+  - first:
+      137: 13700002
+    second: CV 1
+  - first:
+      137: 13700004
+    second: Starter 1
+  - first:
+      137: 13700006
+    second: StarterRope
+  - first:
+      137: 13700008
+    second: STdn 1
+  - first:
+      137: 13700010
+    second: STup 1
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -56,7 +148,7 @@ ModelImporter:
       name: JunkoWeapon
     second: {fileID: 2100000, guid: e65552dfe046a3a4791a1a7fe6d5fe3f, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -66,7 +158,8 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'LeftUpperLeg' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -74,7 +167,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -85,6 +178,7 @@ ModelImporter:
     - serializedVersion: 16
       name: SawMoving
       takeName: SawMoving
+      internalID: 0
       firstFrame: 0
       lastFrame: 2
       wrapMode: 0
@@ -117,6 +211,7 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -124,18 +219,19 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -144,12 +240,103 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
-    human: []
-    skeleton: []
+    serializedVersion: 3
+    human:
+    - boneName: Mesh
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: STup 1
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Chainsaw(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mesh
+      parentName: Chainsaw(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ChainSawBody 1
+      parentName: Mesh
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: STup 1
+      parentName: Mesh
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: STdn 1
+      parentName: Mesh
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CV 1
+      parentName: Mesh
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Starter 1
+      parentName: Mesh
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: StarterRope
+      parentName: Mesh
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ChainSawBody
+      parentName: Chainsaw(Clone)
+      position: {x: -0, y: 0.0149101205, z: -0.008065883}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: STup
+      parentName: Chainsaw(Clone)
+      position: {x: -0, y: 0.008116979, z: 0.59015554}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: STdn
+      parentName: Chainsaw(Clone)
+      position: {x: -0, y: -0.098946944, z: 0.6624253}
+      rotation: {x: 1, y: -0, z: 0, w: 6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CV
+      parentName: Chainsaw(Clone)
+      position: {x: -0, y: -0.047506228, z: 0.86316663}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Starter
+      parentName: Chainsaw(Clone)
+      position: {x: -0.08722814, y: -0.04631682, z: 0.110093094}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: StarterRope 1
+      parentName: Starter
+      position: {x: -0, y: 0, z: 0.034591388}
+      rotation: {x: 0.011055021, y: 0.040034972, z: 0.004162086, w: 0.99912846}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Grip
+      parentName: Chainsaw(Clone)
+      position: {x: -0, y: 0.14917803, z: 0.2579359}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -157,13 +344,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

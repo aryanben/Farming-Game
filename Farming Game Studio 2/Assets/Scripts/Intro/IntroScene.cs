@@ -6,7 +6,6 @@ public class IntroScene : MonoBehaviour
     bool isGrounded;
     public GameObject smoke;
     public GameObject introText;
-    public GameObject introText2;
 
     bool waitForSecondsBoolForIntroText;
     float waitForSecondsFloatForIntroText = 5;
@@ -15,7 +14,7 @@ public class IntroScene : MonoBehaviour
 
     public AudioSource wind;
     public AudioSource explosion;
-
+    public AudioSource line1AI;
     int playExplosionOnce = 0;
     Rigidbody rb;
 
@@ -46,10 +45,12 @@ public class IntroScene : MonoBehaviour
 
             if (waitForSecondsFloatForIntroText <= 0)
             {
+                line1AI.Play();
                 introText.SetActive(true);
                 waitForSecondsBoolForIntroText = false;
             }
         }
+
 
         if (canPlayExplosion)
         {
@@ -62,16 +63,17 @@ public class IntroScene : MonoBehaviour
             canPlayExplosion = true;
         }
 
-        if (IntroText.chatBox == 1)
+        if (IntroText.chatBox == 0)
         {
-            introText2.SetActive(true);
+            //Play Voice For Chat one
         }
 
-        if(IntroText.chatBox == 2)
+        if (IntroText.chatBox == 1)
         {
             SceneManager.LoadScene("Odera's Scene");
         }
     }
+
 
     void PointOfContact()
     {

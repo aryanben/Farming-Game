@@ -1,31 +1,70 @@
 fileFormatVersion: 2
 guid: 0fd5424a92bbc1a4c82392dc7563d75e
-timeCreated: 1524317820
-licenseType: Store
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: DrumClip
-    100002: //RootNode
-    100004: NailGunbody
-    100006: ReflexSight
-    400000: DrumClip
-    400002: //RootNode
-    400004: NailGunbody
-    400006: ReflexSight
-    2100000: mat1
-    2300000: DrumClip
-    2300002: NailGunbody
-    2300004: ReflexSight
-    3300000: DrumClip
-    3300002: NailGunbody
-    3300004: ReflexSight
-    4300000: NailGunbody
-    4300002: DrumClip
-    4300004: ReflexSight
-  externalObjects: {}
+  serializedVersion: 19300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: DrumClip
+  - first:
+      1: 100002
+    second: //RootNode
+  - first:
+      1: 100004
+    second: NailGunbody
+  - first:
+      1: 100006
+    second: ReflexSight
+  - first:
+      4: 400000
+    second: DrumClip
+  - first:
+      4: 400002
+    second: //RootNode
+  - first:
+      4: 400004
+    second: NailGunbody
+  - first:
+      4: 400006
+    second: ReflexSight
+  - first:
+      21: 2100000
+    second: mat1
+  - first:
+      23: 2300000
+    second: DrumClip
+  - first:
+      23: 2300002
+    second: NailGunbody
+  - first:
+      23: 2300004
+    second: ReflexSight
+  - first:
+      33: 3300000
+    second: DrumClip
+  - first:
+      33: 3300002
+    second: NailGunbody
+  - first:
+      33: 3300004
+    second: ReflexSight
+  - first:
+      43: 4300000
+    second: NailGunbody
+  - first:
+      43: 4300002
+    second: DrumClip
+  - first:
+      43: 4300004
+    second: ReflexSight
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat1
+    second: {fileID: 2100000, guid: e65552dfe046a3a4791a1a7fe6d5fe3f, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -35,14 +74,16 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'Hips' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    animationCompression: 1
+    importConstraints: 0
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -56,6 +97,8 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -63,10 +106,13 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
@@ -78,12 +124,35 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: NailGun(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NailGunbody
+      parentName: NailGun(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: DrumClip
+      parentName: NailGun(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ReflexSight
+      parentName: NailGun(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -91,14 +160,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

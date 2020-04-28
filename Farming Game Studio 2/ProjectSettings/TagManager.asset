@@ -11,6 +11,24 @@ TagManager:
   - Ground
   - canMove
   - Tree
+  - Canvas
+  - Item
+  - Well
+  - BoidManager
+  - Bird
+  - interactable
+  - EnemyParent
+  - Ball
+  - UnbreakableBlock
+  - BreakableBlock
+  - You Win
+  - Plane
+  - Table
+  - Stone
+  - Tent
+  - scoreAndInputFieldCanvas
+  - gm
+  - BewareOfEnemy
   layers:
   - Default
   - TransparentFX
