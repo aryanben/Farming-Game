@@ -8,7 +8,8 @@ public class Item
     {
         Wood,
         Stone,
-        Seed
+        Seed,
+        
     }
     public typeEnum type;
     public int amount;
