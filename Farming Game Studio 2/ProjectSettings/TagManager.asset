@@ -29,6 +29,8 @@ TagManager:
   - scoreAndInputFieldCanvas
   - gm
   - BewareOfEnemy
+  - CountTheNight
+  - Night
   layers:
   - Default
   - TransparentFX
