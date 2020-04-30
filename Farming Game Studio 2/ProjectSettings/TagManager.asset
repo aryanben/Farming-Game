@@ -41,8 +41,8 @@ TagManager:
   - 
   - 
   - EnemyLayer
-  - Plane
-  - 
+  - treeMask
+  - stoneMask
   - 
   - 
   - 

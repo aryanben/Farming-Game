@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
+    public static Interactable interactable;
     float treeHealth;
     float stoneHealth;
 
@@ -14,13 +15,11 @@ public class Interactable : MonoBehaviour
     float wood = 5f;
     float stone = 5f;
 
-    public GameObject sightSeeCanvas;
     public GameObject sleepCanvas;
     public GameObject camera;
     CameraMovement cameraAnim;
 
     public GameObject tutorialTree;
-    public GameObject tutorialStone;
 
     //For New Day
     public GameObject dayLoadingPanel;
@@ -29,13 +28,23 @@ public class Interactable : MonoBehaviour
     public float startNewDayTick = 1;
     bool canStartTheDay = true;
     float timeLimitToNotSleep = 60;
+    public static int amountOfTrees = 22;
 
     public static int destroyedMaterial; //For the dialogue
+    private void Awake()
+    {        
+        startNewDayTick = 3;
+    }
     private void Start()
     {
+        sleepCanvas = GameObject.Find("Sleep Canvas");
+        camera = GameObject.Find("Main Camera");
+        tutorialTree = GameObject.Find("TutorialTree(Clone)");
+        dayLoadingPanel = GameObject.Find("DayLoading");
         treeHealth = 2;
         stoneHealth = 2;
         cameraAnim = camera.GetComponent<CameraMovement>();
+        interactable = this;
     }
 
     private void Update()
@@ -44,12 +53,12 @@ public class Interactable : MonoBehaviour
         {
             canAttackTree = false;
             treeHealth -= axeDamage;
-            Debug.Log("Inventory.AddWood = " + wood);
+            Inventory.instance.AddItem(Item.typeEnum.Wood, 5);
         }
         if (canAttackStone)
         {
             canAttackStone = false;
-            Debug.Log("Inventory.AddStone = " + stone);
+            Inventory.instance.AddItem(Item.typeEnum.Stone, 5);
             stoneHealth -= axeDamage;
         }
 
@@ -60,21 +69,22 @@ public class Interactable : MonoBehaviour
                 destroyedMaterial = 1;
             }
 
-            Debug.Log("Inventory.AddWood = " + 20);
+            amountOfTrees--;
+            Inventory.instance.AddItem(Item.typeEnum.Wood, 20);
             Destroy(gameObject);
         }
 
         if (stoneHealth <= 0)
         {
-            Debug.Log("Inventory.AddStone = " + 20);
+            amountOfTrees--;
+            Inventory.instance.AddItem(Item.typeEnum.Stone, 20);
             Destroy(gameObject);
         }
 
 
-
         if (startNewDay)
         {
-            dayLoadingPanel.SetActive(true);
+            dayLoadingPanel.GetComponent<Canvas>().enabled =true;
 
             //Set Sun transforms to normal
             Sun.instance.sun.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
@@ -88,7 +98,7 @@ public class Interactable : MonoBehaviour
 
             if (startNewDayTick <= 0)
             {
-                dayLoadingPanel.SetActive(false);
+                dayLoadingPanel.GetComponent<Canvas>().enabled = false;
                 startNewDay = false;
                 incrementDay = true;
                 startNewDayTick = 1;
@@ -128,23 +138,13 @@ public class Interactable : MonoBehaviour
         {
             canAttackStone = true;
         }
-
     }
 
     private void OnTriggerStay(Collider other)
     {
-        //if (this.CompareTag("Well") && other.gameObject.CompareTag("Player"))
-        //{
-        //    sightSeeCanvas.SetActive(true);
-        //    if (Input.GetKey(KeyCode.Return))
-        //    {
-        //        SceneManager.LoadScene("FishSightSee");
-        //    }
-        //}
-
         if (this.CompareTag("Tent") && other.gameObject.CompareTag("Player"))
         {
-            sleepCanvas.SetActive(true);
+            sleepCanvas.GetComponent<Canvas>().enabled = true;
 
             if (Input.GetKey(KeyCode.Return))
             {
@@ -158,13 +158,9 @@ public class Interactable : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (this.CompareTag("Well") && other.gameObject.CompareTag("Player"))
-        {
-            sightSeeCanvas.SetActive(false);
-        }
         if (this.CompareTag("Tent") && other.gameObject.CompareTag("Player"))
         {
-            sleepCanvas.SetActive(false);
+            sleepCanvas.GetComponent<Canvas>().enabled = false;
         }
     }
 }
