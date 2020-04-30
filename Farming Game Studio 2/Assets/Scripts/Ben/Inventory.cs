@@ -6,7 +6,7 @@ public class Inventory : MonoBehaviour
 {
     public List<Item> itemList;
 
-    static Inventory instance;
+    public static Inventory instance;
     public Inventory()
     {
         itemList = new List<Item>();
@@ -15,29 +15,15 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Awake()
     {
-        instance = this;
-        
+        instance = this;        
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            AddItem(Item.typeEnum.Wood, 5);
-
+        if (Input.GetKeyDown(KeyCode.I))
+        {          
             for (int i = 0; i < itemList.Count; i++)
-            {
-               
-                Debug.Log(itemList[i].type.ToString() + " = " + itemList[i].amount);
-                
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            AddItem(Item.typeEnum.Stone, 5);
-            for (int i = 0; i < itemList.Count; i++)
-            {
-               
-                Debug.Log(itemList[i].type.ToString() + " = " + itemList[i].amount);
+            {               
+                Debug.Log(itemList[i].type.ToString() + " = " + itemList[i].amount);                
             }
         }
     }
