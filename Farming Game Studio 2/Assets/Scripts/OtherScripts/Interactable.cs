@@ -23,6 +23,7 @@ public class Interactable : MonoBehaviour
 
     //For New Day
     public GameObject dayLoadingPanel;
+    public GameObject seedCanvas;
     public bool startNewDay;
     bool incrementDay;
     public float startNewDayTick = 1;
@@ -40,11 +41,13 @@ public class Interactable : MonoBehaviour
         sleepCanvas = GameObject.Find("Sleep Canvas");
         camera = GameObject.Find("Main Camera");
         tutorialTree = GameObject.Find("TutorialTree(Clone)");
-        dayLoadingPanel = GameObject.Find("DayLoading");
+        dayLoadingPanel = GameObject.Find("LoadDay");
+        seedCanvas = GameObject.Find("GetSeed(CANVAS)");
         treeHealth = 2;
         stoneHealth = 2;
         cameraAnim = camera.GetComponent<CameraMovement>();
         interactable = this;
+        seedCanvas.GetComponent<Canvas>().enabled = false;
     }
 
     private void Update()
@@ -152,6 +155,19 @@ public class Interactable : MonoBehaviour
                 {
                     startNewDay = true;
                 }      
+            }
+        }
+
+        if (this.CompareTag("Seed") && other.gameObject.CompareTag("Player"))
+        {
+            seedCanvas.GetComponent<Canvas>().enabled = true;
+
+            if (Input.GetKey(KeyCode.Return))
+            {
+                Inventory.instance.AddItem(Item.typeEnum.CarrotSeed, 5);
+                Inventory.instance.AddItem(Item.typeEnum.TomatoSeed, 5);
+                Destroy(this.gameObject);
+                seedCanvas.GetComponent<Canvas>().enabled = false;
             }
         }
     }
