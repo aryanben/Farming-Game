@@ -19,20 +19,11 @@ public class SubjectManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, planeLayerMask))
-            {
-                GameObject.Find("testobject").GetComponent<SubjectManager>().PlantCrop(hit.point, "Tomato");
-
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.T)) 
-        {
-            cropManager.UpdateObservers();
-        }
+       
+        //if (Input.GetKeyDown(KeyCode.T)) 
+        //{
+        //    cropManager.UpdateObservers();
+        //}
 
         if (tickTime<=0)
         {

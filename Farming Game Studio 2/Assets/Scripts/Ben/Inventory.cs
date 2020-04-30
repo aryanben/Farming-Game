@@ -23,7 +23,7 @@ public class Inventory : MonoBehaviour
      
         if (Input.GetKeyDown(KeyCode.W))
         {
-            AddItem(Item.typeEnum.Wood, 5);
+            AddItem(Item.typeEnum.TomatoSeed, 5);
 
             for (int i = 0; i < itemList.Count; i++)
             {
@@ -34,7 +34,7 @@ public class Inventory : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            AddItem(Item.typeEnum.Stone, 5);
+            AddItem(Item.typeEnum.CarrotSeed, 5);
             for (int i = 0; i < itemList.Count; i++)
             {
                
