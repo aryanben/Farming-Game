@@ -70,7 +70,7 @@ public class Interactable : MonoBehaviour
             Destroy(gameObject);
         }
 
-        Debug.Log(startNewDay);
+
 
         if (startNewDay)
         {

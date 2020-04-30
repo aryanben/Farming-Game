@@ -25,7 +25,7 @@ public class SubjectManager : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, planeLayerMask))
             {
-                GameObject.Find("testobject").GetComponent<SubjectManager>().PlantCrop(hit.point, "Carrot");
+                GameObject.Find("testobject").GetComponent<SubjectManager>().PlantCrop(hit.point, "Tomato");
 
             }
         }

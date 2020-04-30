@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        
         Attack();
         Block();
 
@@ -94,6 +95,7 @@ public class Player : MonoBehaviour
     }
     void Block()
     {
+      
         if (!canSprint)
         {
             if (Input.GetKeyDown(KeyCode.E))

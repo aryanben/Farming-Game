@@ -6,7 +6,7 @@ public class Inventory : MonoBehaviour
 {
     public List<Item> itemList;
 
-    static Inventory instance;
+    public static Inventory instance;
     public Inventory()
     {
         itemList = new List<Item>();
@@ -20,6 +20,7 @@ public class Inventory : MonoBehaviour
     }
     private void Update()
     {
+     
         if (Input.GetKeyDown(KeyCode.W))
         {
             AddItem(Item.typeEnum.Wood, 5);
@@ -66,5 +67,7 @@ public class Inventory : MonoBehaviour
             adder.amount = addAmount;
             itemList.Add(adder);
         }
+        GameObject.Find("YellowBorder").GetComponent<YellowBorderController>().ItemAddCheck();
+
     }
 }

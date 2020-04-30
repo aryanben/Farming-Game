@@ -8,7 +8,10 @@ public class Item
     {
         Wood,
         Stone,
-        Seed,
+        CarrotSeed,
+        TomatoSeed,
+        Carrot,
+        Tomato
         
     }
     public typeEnum type;

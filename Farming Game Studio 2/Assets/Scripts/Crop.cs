@@ -61,7 +61,8 @@ public class Crop : MonoBehaviour
     {
         if (ready)
         {
-
+            Inventory.instance.AddItem(Item.typeEnum.Tomato, 3);
+            Destroy(gameObject);
         }
     }
    
