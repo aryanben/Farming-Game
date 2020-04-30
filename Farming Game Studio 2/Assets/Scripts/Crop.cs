@@ -4,34 +4,35 @@ using UnityEngine;
 
 public class Crop : MonoBehaviour
 {
-    public int currentDay;
-    public int cropPlantDate;
+    
+    
     public int cropAge;
     public string CropName;
     bool watered;
+    
     public int halfAge;
 
     public GameObject cropFruit;
     public GameObject cropPlantSmall;
     public GameObject cropPlantBig;
-    public enum State
+    public bool ready;
+    
+    private void Awake()
     {
-        Planted,
-
-        Ready
-
+        ready = false;
+        watered = true;
+        cropAge = 0;
+        
     }
-    public State cropState;
-    private void Update()
+   
+    public void TickUpdate()
     {
-        DayUpdate();
-    }
-    public void DayUpdate()
-    {
-        cropAge = currentDay - cropPlantDate;
+        
+        cropAge++;
         if (!watered)
         {
             cropAge--;
+          
         }
         if (cropAge >= halfAge)
         {
@@ -41,22 +42,28 @@ public class Crop : MonoBehaviour
         }
         if (cropAge >= (halfAge * 2))
         {
-            cropState = State.Ready;
+            ready = true;
             cropFruit.SetActive(true);
         }
     }
     public void Water() 
     {
         watered = true;
+      
         //make soil darker
+    }
+    public void UnWater()
+    {
+        watered = false;
+
     }
     public void Harvest() 
     {
-        if (cropState==State.Ready)
+        if (ready)
         {
 
         }
     }
-
+   
 
 }

@@ -36,7 +36,7 @@ public class SlimeScript : MonoBehaviour
             towardsPlayer *= minJump;
 
         }
-        Debug.Log(towardsPlayer.magnitude);
+
         if (Vector3.Distance(transform.position, PlayerPos.instance.posVector) < checkRangeAmount)
         {
            

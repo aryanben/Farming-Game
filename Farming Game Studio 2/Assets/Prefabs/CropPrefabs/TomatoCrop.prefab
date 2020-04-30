@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4900018912603631418}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.052161276, y: -0.44575417, z: 0.13499987}
+  m_LocalPosition: {x: 0.052161276, y: 0.08699995, z: 0.13499987}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5738304369062672677}
@@ -112,7 +112,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5741166580889198054
 Transform:
   m_ObjectHideFlags: 0
@@ -121,7 +121,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5737868406220715940}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.037161276, y: -0.5187541, z: 0.029}
+  m_LocalPosition: {x: 0.037161276, y: 0.013999999, z: 0.029}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 5738304369062672677}
@@ -206,7 +206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5741166583208833478
 Transform:
   m_ObjectHideFlags: 0
@@ -215,7 +215,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5737868410306869794}
   m_LocalRotation: {x: -0.6581905, y: -0, z: -0, w: 0.7528515}
-  m_LocalPosition: {x: 0.109, y: 0.485, z: 0.17899999}
+  m_LocalPosition: {x: 0.109, y: 1.0177542, z: 0.17899999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5738304369884085828}
@@ -396,7 +396,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5738304368909626407
 Transform:
   m_ObjectHideFlags: 0
@@ -405,7 +405,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5738304368909626400}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.05, y: -0.5187541, z: 0.015}
+  m_LocalPosition: {x: 0.05, y: 0.014, z: 0.015}
   m_LocalScale: {x: 0.7, y: 1, z: 0.6}
   m_Children: []
   m_Father: {fileID: 5738304369062672677}
@@ -481,6 +481,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5738304369062672677}
+  - component: {fileID: -3213282436177432378}
   m_Layer: 0
   m_Name: TomatoCrop
   m_TagString: Untagged
@@ -496,7 +497,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5738304369062672678}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.052161276, y: 1.5187541, z: -0.13499987}
+  m_LocalPosition: {x: 0, y: -0.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5741166583208833478}
@@ -506,6 +507,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-3213282436177432378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5738304369062672678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83241e45fa096ed4fa553df7dce96e70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cropAge: 0
+  CropName: 
+  halfAge: 3
+  cropFruit: {fileID: 5737868410306869794}
+  cropPlantSmall: {fileID: 5737868406220715940}
+  cropPlantBig: {fileID: 5738304368909626400}
+  ready: 0
 --- !u!1 &5738304369884085829
 GameObject:
   m_ObjectHideFlags: 0
