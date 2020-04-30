@@ -55,8 +55,8 @@ public class Player : MonoBehaviour
 
         if (bt.attackedPlayer)
         {
-            Health.Instance.TakeDamage(30);
-            Debug.Log(Health.currentHealth);
+            print("hi");
+
             bt.attackedPlayer = false;
         }
 

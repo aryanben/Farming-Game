@@ -12,7 +12,7 @@ public class Attack : BaseNode
         {
             bt.anim.SetTrigger("Attack");
 
-            bt.attackedPlayer = true;           
+            Health.Instance.TakeDamage(10);
 
             bt.attackCountdown = bt.attackWaitTime;
         }
