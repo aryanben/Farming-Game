@@ -58,13 +58,6 @@ public class GameManager : MonoBehaviour
         mill.gameObject.transform.Rotate(0, 0, 50 * Time.deltaTime);
         IncreaseScoreThroughScenes.playerScore = day;
         scoreText.text = "Day: " + day.ToString();
-        increaseDay -= Time.deltaTime;
-
-        if (increaseDay <= 0)
-        {
-            day++;
-            increaseDay = 310f;
-        }
     }
     public void ShowPlayerName()
     {
@@ -79,6 +72,5 @@ public class GameManager : MonoBehaviour
     public void Exit()
     {
         SceneManager.LoadScene("Odera's Scene");
-        day = 1;
     }
 }

@@ -22,13 +22,20 @@ public class Interactable : MonoBehaviour
     public GameObject tutorialTree;
     public GameObject tutorialStone;
 
+    //For New Day
+    public GameObject dayLoadingPanel;
+    public bool startNewDay;
+    bool incrementDay;
+    public float startNewDayTick = 1;
+    bool canStartTheDay = true;
+    float timeLimitToNotSleep = 60;
+
     public static int destroyedMaterial; //For the dialogue
     private void Start()
     {
         treeHealth = 2;
         stoneHealth = 2;
         cameraAnim = camera.GetComponent<CameraMovement>();
-
     }
 
     private void Update()
@@ -46,21 +53,68 @@ public class Interactable : MonoBehaviour
             stoneHealth -= axeDamage;
         }
 
-        if(treeHealth <= 0)
+        if (treeHealth <= 0)
         {
-            if(treeHealth <= 0 && tutorialTree != null)
+            if (treeHealth <= 0 && tutorialTree != null)
             {
                 destroyedMaterial = 1;
             }
-          
+
             Debug.Log("Inventory.AddWood = " + 20);
             Destroy(gameObject);
         }
 
-        if(stoneHealth <= 0)
+        if (stoneHealth <= 0)
         {
             Debug.Log("Inventory.AddStone = " + 20);
             Destroy(gameObject);
+        }
+
+        Debug.Log(startNewDay);
+
+        if (startNewDay)
+        {
+            dayLoadingPanel.SetActive(true);
+
+            //Set Sun transforms to normal
+            Sun.instance.sun.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+            Sun.instance.night.transform.rotation = Quaternion.Euler(-90f, 0f, 0f);
+
+            Sun.instance.sun.transform.position = new Vector3(0, 398, -0.7f);
+            Sun.instance.night.transform.position = new Vector3(0, -1.2f, -0.7f);
+
+            Sun.canRotate = false;
+            startNewDayTick -= Time.deltaTime;
+
+            if (startNewDayTick <= 0)
+            {
+                dayLoadingPanel.SetActive(false);
+                startNewDay = false;
+                incrementDay = true;
+                startNewDayTick = 1;
+            }
+        }
+        if (incrementDay)
+        {
+            GameManager.day++;
+            Sun.canRotate = true;
+            incrementDay = false;
+            canStartTheDay = false;
+        }
+        if (startNewDayTick >= 1)
+        {
+            incrementDay = false;
+        }
+
+        if(canStartTheDay == false)
+        {
+            timeLimitToNotSleep -= Time.deltaTime;
+
+            if(timeLimitToNotSleep <= 0)
+            {
+                canStartTheDay = true;
+                timeLimitToNotSleep = 10;
+            }
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -79,21 +133,25 @@ public class Interactable : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (this.CompareTag("Well") && other.gameObject.CompareTag("Player"))
-        {
-            sightSeeCanvas.SetActive(true);
-            if (Input.GetKey(KeyCode.Return))
-            {
-                SceneManager.LoadScene("FishSightSee");
-            }
-        }
+        //if (this.CompareTag("Well") && other.gameObject.CompareTag("Player"))
+        //{
+        //    sightSeeCanvas.SetActive(true);
+        //    if (Input.GetKey(KeyCode.Return))
+        //    {
+        //        SceneManager.LoadScene("FishSightSee");
+        //    }
+        //}
 
         if (this.CompareTag("Tent") && other.gameObject.CompareTag("Player"))
         {
             sleepCanvas.SetActive(true);
+
             if (Input.GetKey(KeyCode.Return))
             {
-                cameraAnim.GetComponent<Animation>().Play();
+                if (canStartTheDay)
+                {
+                    startNewDay = true;
+                }      
             }
         }
     }
