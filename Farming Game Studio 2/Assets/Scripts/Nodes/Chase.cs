@@ -47,8 +47,11 @@ public class Chase : BaseNode
             }
 
             bt.anim.SetBool("IsMoving", true);
-
-            bt.rb.velocity += acceleration * Time.deltaTime;
+            if (bt.playerDetect)
+            {
+                bt.rb.velocity += acceleration * Time.deltaTime;
+            }
+            
 
             if (bt.rb.velocity.magnitude > bt.maxVelocity)
             {

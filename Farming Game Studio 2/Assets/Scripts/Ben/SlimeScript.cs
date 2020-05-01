@@ -11,8 +11,11 @@ public class SlimeScript : MonoBehaviour
     public float minJump;
     float jumptimer;
     public float jumpTimeLimit;
-
+    public float health;
     Rigidbody rb;
+    public float attackRate;
+    float attackTimer;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -47,6 +50,30 @@ public class SlimeScript : MonoBehaviour
             }
         }
         jumptimer -= Time.deltaTime;
+        attackTimer -= Time.deltaTime;
        
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag=="Sword")
+        {
+            health -= 10;
+            if (health<0)
+            {
+                Destroy(gameObject);
+            }
+        }
+        if (other.tag=="Player")
+        {
+            Health.Instance.TakeDamage(3);
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag=="Player"&&attackTimer<=0)
+        {
+            Health.Instance.TakeDamage(3);
+            attackTimer = attackRate;
+        }
     }
 }

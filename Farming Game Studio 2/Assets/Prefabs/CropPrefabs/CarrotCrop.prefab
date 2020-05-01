@@ -198,6 +198,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4995207134963265090}
   - component: {fileID: 9007758522824197477}
+  - component: {fileID: 2235189380342861725}
+  - component: {fileID: 5359684527210938057}
   m_Layer: 0
   m_Name: CarrotCrop
   m_TagString: Untagged
@@ -242,6 +244,35 @@ MonoBehaviour:
   cropPlantSmall: {fileID: 8480157982097534123}
   cropPlantBig: {fileID: 4304176222309132399}
   ready: 0
+--- !u!65 &2235189380342861725
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4758509387361311482}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 3, z: 1}
+  m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!54 &5359684527210938057
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4758509387361311482}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4917089316586147920
 GameObject:
   m_ObjectHideFlags: 0

@@ -65,6 +65,7 @@ public class Player : MonoBehaviour
             anim.SetTrigger("Death");
             Health.Instance.triggerAnimation = false;
         }
+        PlayerPos.instance.posVector = transform.position;
     }
     void FixedUpdate()
     {

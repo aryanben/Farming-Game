@@ -61,10 +61,27 @@ public class Crop : MonoBehaviour
     {
         if (ready)
         {
-            Inventory.instance.AddItem(Item.typeEnum.Tomato, 3);
-            Destroy(gameObject);
+            if (CropName=="Tom")
+            {
+                Inventory.instance.AddItem(Item.typeEnum.Tomato, 3);
+                Inventory.instance.AddItem(Item.typeEnum.TomatoSeed, 2);
+                Destroy(gameObject);
+            }
+            else if (CropName == "Car")
+            {
+                Inventory.instance.AddItem(Item.typeEnum.Carrot, 3);
+                Inventory.instance.AddItem(Item.typeEnum.CarrotSeed, 2);
+                Destroy(gameObject);
+            }
+            
         }
     }
-   
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag=="Sword")
+        {
+            Harvest();
+        }
+    }
 
 }

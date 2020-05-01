@@ -44,11 +44,13 @@ public class SubjectManager : MonoBehaviour
         {
              GameObject temp =  Instantiate(tomatoPrefab, position, Quaternion.identity);
              AddCropToList(temp.GetComponent<Crop>());
+             temp.GetComponent<Crop>().CropName = "Tom";
         }
         else if (name == "Carrot")
         {
             GameObject temp = Instantiate(carrotPrefab, position, Quaternion.identity);
             AddCropToList(temp.GetComponent<Crop>());
+            temp.GetComponent<Crop>().CropName = "Car";
         }
     }
 }
