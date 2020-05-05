@@ -219,8 +219,7 @@ public class YellowBorderController : MonoBehaviour
     {
         canScroll = true;
 
-        if (canScroll)
-        {
+      
             if (Input.GetAxis("Mouse ScrollWheel") > 0)
             {
                 scrollNumber++;
@@ -272,7 +271,7 @@ public class YellowBorderController : MonoBehaviour
                 scrollNumber = 7;
             }
             currentSlotIndex = scrollNumber;
-        }
+        
         canScroll = false;
     }
 }

@@ -108,7 +108,10 @@ public class EnemyBehaviorTree : MonoBehaviour
             currHealth = maxHealth;
         }
 
-    
+        if (transform.position.y>.2f)
+        {
+            transform.position = new Vector3(transform.position.x, .2f, transform.position.z);
+        }
     }    
 
     public virtual void OnTriggerEnter(Collider other)

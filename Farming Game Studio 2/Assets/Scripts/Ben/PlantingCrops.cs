@@ -7,16 +7,13 @@ public class PlantingCrops : MonoBehaviour
     public LayerMask planeLayerMask;
     void Start()
     {
-        Inventory.instance.AddItem(Item.typeEnum.Carrot, 30);
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            Health.Instance.TakeDamage(10);
-        }
+      
         if (YellowBorderController.currentSlotIndex == 5)
         {
             if (Input.GetMouseButtonDown(0)) 
@@ -96,8 +93,10 @@ public class PlantingCrops : MonoBehaviour
                 {
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                     RaycastHit hit;
-                    if (Physics.Raycast(ray, out hit, planeLayerMask))
-                    {
+                    if (Physics.Raycast(ray, out hit,Mathf.Infinity,planeLayerMask))
+                    {   
+                        Debug.Log(hit.collider.gameObject.name);
+                        
                         GameObject.Find("testobject").GetComponent<SubjectManager>().PlantCrop(hit.point, "Carrot");
                         Inventory.instance.itemList[container].amount--;
                         GameObject.Find("YellowBorder").GetComponent<YellowBorderController>().ItemAddCheck();
@@ -134,7 +133,7 @@ public class PlantingCrops : MonoBehaviour
 
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                     RaycastHit hit;
-                    if (Physics.Raycast(ray, out hit, planeLayerMask))
+                    if (Physics.Raycast(ray, out hit, Mathf.Infinity, planeLayerMask))
                     {
                         GameObject.Find("testobject").GetComponent<SubjectManager>().PlantCrop(hit.point, "Tomato");
                         Inventory.instance.itemList[container].amount--;

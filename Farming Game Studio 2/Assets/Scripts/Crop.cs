@@ -27,23 +27,28 @@ public class Crop : MonoBehaviour
    
     public void TickUpdate()
     {
-        
-        cropAge++;
-        if (!watered)
-        {
-            cropAge--;
-          
-        }
-        if (cropAge >= halfAge)
-        {
-            cropPlantSmall.SetActive(false);
-            cropPlantBig.SetActive(true);
 
-        }
-        if (cropAge >= (halfAge * 2))
+        if (this!=null)
         {
-            ready = true;
-            cropFruit.SetActive(true);
+
+
+            cropAge++;
+            if (!watered)
+            {
+                cropAge--;
+
+            }
+            if (cropAge >= halfAge)
+            {
+                cropPlantSmall.SetActive(false);
+                cropPlantBig.SetActive(true);
+
+            }
+            if (cropAge >= (halfAge * 2))
+            {
+                ready = true;
+                cropFruit.SetActive(true);
+            }
         }
     }
     public void Water() 

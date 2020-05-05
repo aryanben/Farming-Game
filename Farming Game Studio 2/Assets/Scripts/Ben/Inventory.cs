@@ -21,17 +21,17 @@ public class Inventory : MonoBehaviour
     private void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            AddItem(Item.typeEnum.TomatoSeed, 5);
+        //if (Input.GetKeyDown(KeyCode.W))
+        //{
+        //    AddItem(Item.typeEnum.TomatoSeed, 5);
 
-            for (int i = 0; i < itemList.Count; i++)
-            {
+        //    for (int i = 0; i < itemList.Count; i++)
+        //    {
 
-                Debug.Log(itemList[i].type.ToString() + " = " + itemList[i].amount);
+        //        Debug.Log(itemList[i].type.ToString() + " = " + itemList[i].amount);
 
-            }
-        }
+        //    }
+        //}
 
     }
     public void AddItem(Item.typeEnum addType, int addAmount)
